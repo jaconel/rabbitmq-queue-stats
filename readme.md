@@ -21,6 +21,7 @@ The following environmental variables must be set in order for the daemon to sta
 - `QS_TICK_TIME`
 - `QS_STATSD_HOST`
 - `QS_STATSD_PORT`
+- `QS_STATSD_PREFIX`
 
 ## Running
 
