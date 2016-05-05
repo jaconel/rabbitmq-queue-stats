@@ -36,6 +36,11 @@ var statsd = new lynx(statsdHost, statsdPort, { scope: statsdPrefix });
 
 setInterval(function() {
     request(url, function(error, response, body) {
+        if (error) {
+            console.log('An error occurred retrieving stats from rabbitmq: %s', error.toString());
+            return;
+        }
+
         if (response.statusCode == 200) {
             var queues = JSON.parse(body);
             queues.forEach(function(q) {
