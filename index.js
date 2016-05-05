@@ -42,6 +42,8 @@ setInterval(function() {
         }
 
         if (response.statusCode == 200) {
+            console.log('Valid response received from rabbitmq, about to push metrics to statsd');
+
             var queues = JSON.parse(body);
             queues.forEach(function(q) {
                 var prefix = util.format('queue.%s.', q.name);
@@ -55,7 +57,7 @@ setInterval(function() {
                 statsd.gauge(prefix + 'consumer.count', q.consumers);
 
                 var redeliveryRate = 0;
-                if (q.message_stats.redeliver_details) {
+                if (q.message_stats && q.message_stats.redeliver_details) {
                     redeliveryRate = q.message_stats.redeliver_details.rate;
                 }
                 statsd.gauge(prefix + 'redelivery.rate', redeliveryRate);
