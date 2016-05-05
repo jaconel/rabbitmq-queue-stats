@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Background worker that periodically reads queue information from the rabbitmq management api and publishes it to statsd.",
   "keywords": "statsd, stats, queues, rabbitmq, amqp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaconel/rabbitmq-queue-stats.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "pm2 start pm2.json"
