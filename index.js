@@ -20,12 +20,12 @@ var statsdPrefix = getRequiredEnv('QS_STATSD_PREFIX');
 
 // statsd config can either be provided by linking in a docker container or by explicitly specifying it
 // in an env variable.
-var statsdHost = process.env.STATSD_PORT_8125_UDP_ADDR || process.env.STATSD_HOST;
+var statsdHost = process.env.STATSD_PORT_8125_UDP_ADDR || process.env.QS_STATSD_HOST;
 if (!statsdHost) {
     throw new Error('Missing env variable \'STATSD_HOST\'');
 }
 
-var statsdPort = process.env.STATSD_PORT_8125_UDP_PORT || process.env.STATSD_PORT;
+var statsdPort = process.env.STATSD_PORT_8125_UDP_PORT || process.env.QS_STATSD_PORT;
 if (!statsdPort) {
     throw new Error('Missing env variable \'STATSD_PORT\'');
 }
