@@ -1,0 +1,5 @@
+statsd:
+    container_name: statsd
+    image: hypnza/statsd_dumpmessages
+    ports:
+        - "8125/udp"

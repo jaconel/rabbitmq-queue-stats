@@ -1,0 +1,12 @@
+{
+  "name": "rabbitmq-queue-stats",
+  "version": "0.0.1",
+  "description": "Background worker that periodically reads queue information from the rabbitmq management api and publishes it to statsd.",
+  "keywords": "statsd, stats, queues, rabbitmq, amqp",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start pm2.json"
+  },
+  "author": "Jaco Nel <jaco.nel007@gmail.com>",
+  "license": "ISC"
+}
