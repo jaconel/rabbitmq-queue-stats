@@ -12,5 +12,9 @@
     "start": "pm2 start pm2.json"
   },
   "author": "Jaco Nel <jaco.nel007@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lynx": "^0.2.0",
+    "request": "^2.72.0"
+  }
 }
